@@ -1,4 +1,5 @@
-require 'rails_helper'
+require 'spec_helper'
+require 'services/test_service'
 
 RSpec.describe ::Services::TestService do
   subject{ described_class.new }
