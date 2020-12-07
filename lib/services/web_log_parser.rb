@@ -1,6 +1,7 @@
-require 'services/web_log_file_reader'
-require 'models/web_log_entry'
-require 'repositories/web_log_entry_repository'
+require_relative 'web_log_file_reader'
+require_relative '../models/web_log_entry'
+require_relative '../repositories/web_log_entry_repository'
+require 'byebug'
 
 class WebLogParser
   attr_reader :execute_finished
@@ -23,7 +24,6 @@ class WebLogParser
   def formatted_web_page_count
     execute
     web_pages = @web_log_entry_repository.most_popular_web_pages
-    # byebug
     web_pages.map { |page| "#{page[0]} #{page[1]} visits" }
   end
 

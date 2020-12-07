@@ -15,7 +15,7 @@ class WebLogEntry
 
   def initialize(page_address: nil, ip_address: nil)
     @page_address = page_address
-    @ip_address = ip_address
+    @ip_address = remove_zeros_from_ip(ip_address)
   end
 
   def valid_page_address_format
@@ -32,5 +32,22 @@ class WebLogEntry
     unless IPAddress.valid?(ip_address)
       errors.add(:ip_address, 'ip_address needs to be a valid IP Address')
     end
+  end
+
+  private
+
+  def remove_zeros_from_ip(ip_add)
+    address_array = ip_add.split('.').map do |element|
+      if element.length == 1
+        element
+      elsif element[0] == '0'
+        element.slice!(0)
+        element
+      else
+        element
+      end
+    end
+
+    address_array.join('.')
   end
 end
