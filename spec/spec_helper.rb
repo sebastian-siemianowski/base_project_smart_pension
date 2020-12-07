@@ -16,6 +16,7 @@
 #
 require 'byebug'
 require 'simplecov'
+require 'ipaddress'
 SimpleCov.start
 
 RSpec.configure do |config|

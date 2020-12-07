@@ -9,6 +9,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rubocop'
   gem 'simplecov', require: false, group: :test
+  gem 'ipaddress'
 end
 
 group :test do
