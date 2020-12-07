@@ -22,6 +22,10 @@ class WebLogEntry
     unless page_address.is_a?(String) && !page_address.strip.empty?
       errors.add(:page_address, 'page_address needs to be a non empty string')
     end
+
+    unless page_address.is_a?(String) && !page_address.strip.empty? && page_address[0] == '/'
+      errors.add(:page_address, 'page_address needs to start with /')
+    end
   end
 
   def valid_ip_address_format
