@@ -37,6 +37,8 @@ class WebLogEntry
   private
 
   def remove_zeros_from_ip(ip_add)
+    return if ip_add.nil?
+    
     address_array = ip_add.split('.').map do |element|
       if element.length == 1
         element
