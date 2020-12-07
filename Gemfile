@@ -5,10 +5,10 @@ ruby '2.6.5'
 
 gem "activemodel", require: "active_model"
 
-group :development, :test do
+# group :development, :test do
   gem 'byebug'
   gem 'rubocop'
-end
+# end
 
 group :test do
   gem 'shoulda-matchers'
