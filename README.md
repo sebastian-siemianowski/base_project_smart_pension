@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To install dependencies please use following command
 
-Things you may want to cover:
+bin/setup
 
-* Ruby version
+To parse the file please use following command
 
-* System dependencies
+ ./parser.rb webserver_correct_sample.log
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Unfortunately the original file did not contain any valid entries and as such I had to provide the modified copy due to the IP addresses being incorrect
