@@ -8,6 +8,7 @@ gem "activemodel", require: "active_model"
 # group :development, :test do
   gem 'byebug'
   gem 'rubocop'
+gem 'simplecov', require: false, group: :test
 # end
 
 group :test do
