@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
-require_relative './lib/services/web_log_parser'
+require_relative "./lib/services/web_log_parser"
 
 web_log_parser = WebLogParser.new(ARGV[0])
 

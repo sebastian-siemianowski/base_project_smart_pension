@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class WebLogEntryRepository
   attr_reader :all, :non_unique_cache_valid, :unique_cache_valid
 

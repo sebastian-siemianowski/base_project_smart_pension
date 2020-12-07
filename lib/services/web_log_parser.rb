@@ -1,7 +1,9 @@
-require_relative 'web_log_file_reader'
-require_relative '../models/web_log_entry'
-require_relative '../repositories/web_log_entry_repository'
-require 'byebug'
+# frozen_string_literal: true
+
+require_relative "web_log_file_reader"
+require_relative "../models/web_log_entry"
+require_relative "../repositories/web_log_entry_repository"
+require "byebug"
 
 class WebLogParser
   attr_reader :execute_finished
@@ -12,6 +14,7 @@ class WebLogParser
 
   def execute
     return if execute_finished
+
     @web_log_file_reader.execute
 
     @web_log_file_reader.log_lines.each do |log_line|
