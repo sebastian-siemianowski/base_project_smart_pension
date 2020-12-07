@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 class WebLogFileReader
   attr_accessor :log_lines, :filepath
 
   def initialize(filepath)
-    raise ArgumentError.new('Please provide a valid file path')  unless File.file?(filepath)
+    raise ArgumentError, 'Please provide a valid file path' unless File.file?(filepath)
+
     @log_lines = []
     @filepath = filepath
   end

@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 require_relative './lib/services/web_log_parser'
 
@@ -10,4 +11,4 @@ puts "\nWeb pages with page counts:\n#{web_log_parser.formatted_web_page_count.j
 
 puts "\nWeb pages with page counts\n#{web_log_parser.formatted_web_page_unique_count.join("\n")}"
 
-puts ""
+puts ''

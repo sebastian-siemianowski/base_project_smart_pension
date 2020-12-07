@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'active_model'
 require 'ipaddress'
 
@@ -11,7 +13,6 @@ class WebLogEntry
 
   validate :valid_page_address_format
   validate :valid_ip_address_format
-
 
   def initialize(page_address: nil, ip_address: nil)
     @page_address = page_address
@@ -29,9 +30,7 @@ class WebLogEntry
       errors.add(:ip_address, 'ip_address needs to be a non empty string')
     end
 
-    unless IPAddress.valid?(ip_address)
-      errors.add(:ip_address, 'ip_address needs to be a valid IP Address')
-    end
+    errors.add(:ip_address, 'ip_address needs to be a valid IP Address') unless IPAddress.valid?(ip_address)
   end
 
   private
