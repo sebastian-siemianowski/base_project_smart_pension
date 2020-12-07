@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require_relative 'web_log_file_reader'
-require_relative '../models/web_log_entry'
-require_relative '../repositories/web_log_entry_repository'
-require 'byebug'
+require_relative "web_log_file_reader"
+require_relative "../models/web_log_entry"
+require_relative "../repositories/web_log_entry_repository"
+require "byebug"
 
 class WebLogParser
   attr_reader :execute_finished

@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require_relative './lib/services/web_log_parser'
+require_relative "./lib/services/web_log_parser"
 
 web_log_parser = WebLogParser.new(ARGV[0])
 
@@ -11,4 +11,4 @@ puts "\nWeb pages with page counts:\n#{web_log_parser.formatted_web_page_count.j
 
 puts "\nWeb pages with page counts\n#{web_log_parser.formatted_web_page_unique_count.join("\n")}"
 
-puts ''
+puts ""

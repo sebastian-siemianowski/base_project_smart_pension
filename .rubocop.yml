@@ -1,0 +1,40 @@
+AllCops:
+  TargetRubyVersion: 2.6.5
+
+  Exclude:
+    - 'bin/**/*'
+    - 'spec/**/*'
+    - 'tmp/**/*'
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/Encoding:
+  Enabled: false
+
+Style/FormatString:
+  Enabled: false
+
+Style/InlineComment:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 140
+
+Layout/MethodLength:
+  Max: 20
+
+StringLiterals:
+  EnforcedStyle: double_quotes
+
+DotPosition:
+  EnforcedStyle: leading
+
+Naming/MethodParameterName:
+  MinNameLength: 2
