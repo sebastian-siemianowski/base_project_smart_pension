@@ -1,38 +1,33 @@
 class WebLogEntryRepository
-  attr_reader :all, :cache_expired
+  attr_reader :all, :non_unique_cache_valid, :unique_cache_valid
 
   def initialize
-    @all = []
+    @all         = []
     @cache_valid = true
   end
 
   def add(web_log_entry)
-    return unless web_log_entry.is_a?(WebLogEntry)
+    return unless web_log_entry.is_a?(WebLogEntry) && web_log_entry.valid?
 
-    if web_log_entry.valid?
-      @all << web_log_entry
-      @cache_valid = false
-    end
+    @all << web_log_entry
+    @non_unique_cache_valid = false
+    @unique_cache_valid     = false
   end
 
   def most_popular_web_pages
-    if @most_popular_web_pages && @cache_valid
-      @most_popular_web_pages
-    else
-      @most_popular_web_pages = sorted_log_entries
-      @cache_valid = true
-      @most_popular_web_pages
-    end
+    return @most_popular_web_pages if @most_popular_web_pages && @non_unique_cache_valid
+
+    @most_popular_web_pages = sorted_log_entries
+    @non_unique_cache_valid = true
+    @most_popular_web_pages
   end
-  
+
   def most_popular_unique_pages
-    if @most_popular_web_pages && @cache_valid
-      @most_popular_web_pages
-    else
-      @most_popular_web_pages = sorted_log_entries
-      @cache_valid = true
-      @most_popular_web_pages
-    end
+    return @most_popular_unique_web_pages if @most_popular_unique_web_pages && @cache_valid
+
+    @most_popular_unique_web_pages = sorted_log_entries(unique: true)
+    @cache_valid                   = true
+    @most_popular_unique_web_pages
   end
 
   private
