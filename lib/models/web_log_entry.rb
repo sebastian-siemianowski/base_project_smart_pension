@@ -1,10 +1,3 @@
-require 'active_support/concern'
-require 'active_model/validator'
-require 'active_model/validations'
-require 'active_model/naming'
-require 'active_model/callbacks'
-require 'active_support/callbacks'
-require 'active_model/translation'
 require 'active_model'
 
 class WebLogEntry

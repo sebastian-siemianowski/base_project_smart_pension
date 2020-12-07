@@ -9,6 +9,12 @@ RSpec.describe WebLogParser do
     it 'gives test output to test the project health' do
       expect(subject.formatted_web_page_count).to eq correct_output_for_webserver_test_log
     end
+
+    describe 'when testing malformed api address' do
+      it 'omits entries that are malformed' do
+
+      end
+    end
   end
 
   describe 'when testing formatted web page unique count' do
