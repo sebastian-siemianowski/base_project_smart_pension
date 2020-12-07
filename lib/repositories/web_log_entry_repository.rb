@@ -8,7 +8,7 @@ class WebLogEntryRepository
 
   def add(web_log_entry)
     return unless web_log_entry.is_a?(WebLogEntry)
-    
+
     if web_log_entry.valid?
       @all << web_log_entry
       @cache_valid = false
@@ -20,6 +20,8 @@ class WebLogEntryRepository
       return @most_popular_web_pages
     else
       @most_popular_web_pages = sorted_log_entries
+      @cache_valid = true
+      @most_popular_web_pages
     end
   end
 
